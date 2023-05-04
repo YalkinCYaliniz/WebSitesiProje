@@ -39,17 +39,11 @@
                 </ul>
               </li>
             </ul>
-            <div class="ms-auto">
-              <?php
-                  session_start();
-                  if(isset($_SESSION['username'])){
-                      echo "<a href='#'>".$_SESSION['username']."</a>";
-                  }else{
-                      echo "<a href='login.html'>Giriş Yap</a>";
-                  }
-              ?>
-          </div>
-          
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="login.php">Giriş Yap</a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
