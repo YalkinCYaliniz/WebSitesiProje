@@ -43,11 +43,11 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 		<form action="login.php" method="POST" >
 			<div class="mb-3" >
 				<label for="mail" class="form-label"><h4>Öğrenci numarası</h4></label>
-				<input type="email" class="form-control" id="mail" name="username" aria-describedby="emailHelp" placeholder="Mail">
+				<input type="email" class="form-control" id="mail" name="username" aria-describedby="emailHelp" placeholder="Mail" required>
 			</div>
 			<div class="mb-3">
 				<label for="password" class="form-label"><h4>Şifre</h4></label>
-				<input type="password" class="form-control" id="password" name="password" placeholder="Şifre">
+				<input type="password" class="form-control" id="password" name="password" placeholder="Şifre" required>
 			</div>
 			<button type="submit" class="btn btn-success">Giriş Yap</button>
 		</form>
