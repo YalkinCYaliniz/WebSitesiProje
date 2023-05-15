@@ -3,10 +3,10 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     $username = $_POST['username'];
 	$password = $_POST['password'];
 	$iusername = substr($username, 0, strpos($username, "@"));
-	if($password == $iusername){
+	if($password == "b221210101" || $password == "B221210101"){
 		$text = sprintf("<div class='container my-5'><div class='alert alert-success text-center' role='alert'>Giriş başarılı! Ana Sayfaya Yönlendiriliyorsunuz<br> Hoşgeldin %s !</h1></div>",$iusername);
 		echo $text;
-		echo '<meta http-equiv="refresh" content="4; url=website.html" />';
+		echo '<meta http-equiv="refresh" content="4; url=website.html"/>';
 	
 	}
 	else{
@@ -22,20 +22,9 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/login.">
 </head>
-<style>
-    body {
-        background-image: url(images/sau-giris.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    div.container h2{
-        text-align: center;
-    }
-    div.mb-3{
-        width: 275px;
-    }
-</style>
+
 <body>
 	<div class="container my-5">
 		<h2>Giriş Yap</h2>
@@ -43,7 +32,9 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 		<form action="login.php" method="POST" >
 			<div class="mb-3" >
 				<label for="mail" class="form-label"><h4>Öğrenci numarası</h4></label>
+				
 				<input type="email" class="form-control" id="mail" name="username" aria-describedby="emailHelp" placeholder="Mail" required>
+				<span style="font-size: 14px; color: gray;">Örn: b221210101@sakarya.edu.tr</span>
 			</div>
 			<div class="mb-3">
 				<label for="password" class="form-label"><h4>Şifre</h4></label>
