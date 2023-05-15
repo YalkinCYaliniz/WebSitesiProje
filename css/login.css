@@ -1,0 +1,12 @@
+
+    body {
+        background-image: url(../images/sau-giris.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    div.container h2{
+        text-align: center;
+    }
+    div.mb-3{
+        width: 275px;
+    }
