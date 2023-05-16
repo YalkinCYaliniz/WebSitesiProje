@@ -108,7 +108,70 @@
             });
           })
           .catch(error => console.error(error));
-      </script>
+      </script><br><br>
+
+      
+    
+<div class="row">
+  <div class="col-md-6">
+    <div style="max-height: 300px; overflow-y: scroll;">
+      <table>
+        <thead>
+          <tr>
+            <th>Sıra</th>
+            <th>Dizi Adı</th>
+            <th>Yıl</th>
+            <th>Puan</th>
+          </tr>
+        </thead>
+        <tbody id="series-table-body">
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card bg-light">
+      <div class="card-body">
+        <h5 class="card-title fs-4">Dizi</h5>
+        <p class="card-text fs-5">Dizi izlemeyi çok seviyorum. Bu zamana kadar birçok popüler dizi izledim. Aralarında en sevdiklerim, Breaking Bad ve Dexter oldu. Puanlarını sonuna kadar hak ediyorlar. İşte IMDB'ye göre sıralanan en iyi 250 dizi:</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const seriesTableBody = document.querySelector('#series-table-body');
+
+  fetch('https://imdb-api.com/en/API/Top250TVs/k_hh1uz0bb')
+    .then(response => response.json())
+    .then(data => {
+      const series = data.items;
+
+      series.forEach((series, index) => {
+        const seriesElement = document.createElement('tr');
+
+        const indexElement = document.createElement('td');
+        indexElement.textContent = index + 1;
+        seriesElement.appendChild(indexElement);
+
+        const titleElement = document.createElement('td');
+        titleElement.classList.add('series-title');
+        titleElement.textContent = series.title.toUpperCase();
+        seriesElement.appendChild(titleElement);
+
+        const yearElement = document.createElement('td');
+        yearElement.textContent = series.year;
+        seriesElement.appendChild(yearElement);
+
+        const ratingElement = document.createElement('td');
+        ratingElement.textContent = series.imDbRating;
+        seriesElement.appendChild(ratingElement);
+
+        seriesTableBody.appendChild(seriesElement);
+      });
+    })
+    .catch(error => console.error(error));
+</script>
 
       
       
